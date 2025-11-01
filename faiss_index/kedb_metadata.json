@@ -1,0 +1,82 @@
+[
+  {
+    "doc": "KEDB.txt",
+    "chunk": "Issue:PRS was not sent to customer for a transaction < trxn no >\nCause: EPRDis not received for the < trxn no >",
+    "chunk_id": "KEDB_0"
+  },
+  {
+    "doc": "KEDB.txt",
+    "chunk": "Issue:Client raising complain that PRS not received by them for a transaction < trxn no >\nCause: EPRD is not received for the < trxn no >",
+    "chunk_id": "KEDB_1"
+  },
+  {
+    "doc": "KEDB.txt",
+    "chunk": "Issue:Client raising complaint that proper route was not followed for a specific transaction < trxn no >\nCause: There could be a route mismatch between the required flow for the transaction and the actual route followed by the transaction.",
+    "chunk_id": "KEDB_2"
+  },
+  {
+    "doc": "KEDB.txt",
+    "chunk": "Issue:Client wants to know why incorrect route was followed for a specific transaction < trxn no >\nCause: There could be a route mismatch between the required flow for the transaction and the actual route followed by the transaction.",
+    "chunk_id": "KEDB_3"
+  },
+  {
+    "doc": "KEDB.txt",
+    "chunk": "Issue:Client is escalating for data regarding trxn details for < Clnt_id >\nCause: SQL to be executed : select * from trxn_details where clnt_id = %client_id",
+    "chunk_id": "KEDB_4"
+  },
+  {
+    "doc": "KEDB.txt",
+    "chunk": "Issue:Client is escalating for data regarding transaction details\nCause: Client needs data",
+    "chunk_id": "KEDB_5"
+  },
+  {
+    "doc": "KEDB.txt",
+    "chunk": "Issue:Client is escalating for data regarding user details\nCause: Client needs data reg their users",
+    "chunk_id": "KEDB_6"
+  },
+  {
+    "doc": "KEDB.txt",
+    "chunk": "Issue:Client is requesting for user details data for < Client_id >\nCause: SQL to be executed : select * from client_user_details where clnt_id = %client_id",
+    "chunk_id": "KEDB_7"
+  },
+  {
+    "doc": "KEDB.txt",
+    "chunk": "Issue:PRS was not sent to customer for a transaction < trxn no >\nCause: EPRDis not received for the < trxn no >",
+    "chunk_id": "KEDB_0"
+  },
+  {
+    "doc": "KEDB.txt",
+    "chunk": "Issue:Client raising complain that PRS not received by them for a transaction < trxn no >\nCause: EPRD is not received for the < trxn no >",
+    "chunk_id": "KEDB_1"
+  },
+  {
+    "doc": "KEDB.txt",
+    "chunk": "Issue:Client raising complaint that proper route was not followed for a specific transaction < trxn_no >\nCause: There could be a route mismatch between the required flow for the transaction and the actual route followed by the transaction.",
+    "chunk_id": "KEDB_2"
+  },
+  {
+    "doc": "KEDB.txt",
+    "chunk": "Issue:Client wants to know why incorrect route was followed for a specific transaction < trxn no >\nCause: There could be a route mismatch between the required flow for the transaction and the actual route followed by the transaction.",
+    "chunk_id": "KEDB_3"
+  },
+  {
+    "doc": "KEDB.txt",
+    "chunk": "Issue:Client is escalating for data regarding trxn details for < Clnt_id >\nCause: SQL to be executed : select * from trxn_details where clnt_id = %client_id",
+    "chunk_id": "KEDB_4"
+  },
+  {
+    "doc": "KEDB.txt",
+    "chunk": "Issue:Client is escalating for data regarding transaction details\nCause: Client needs data",
+    "chunk_id": "KEDB_5"
+  },
+  {
+    "doc": "KEDB.txt",
+    "chunk": "Issue:Client is escalating for data regarding user details\nCause: Client needs data reg their users",
+    "chunk_id": "KEDB_6"
+  },
+  {
+    "doc": "KEDB.txt",
+    "chunk": "Issue:Client is requesting for user details data for < Client_id >\nCause: SQL to be executed : select * from client_user_details where clnt_id = %client_id",
+    "chunk_id": "KEDB_7"
+  }
+]

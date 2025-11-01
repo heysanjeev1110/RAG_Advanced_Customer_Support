@@ -1,0 +1,62 @@
+[
+  {
+    "doc": "KEDB_Analysis.txt",
+    "chunk": "Issue:PRS was not sent to customer for a transaction < trxn no >\nAnalysis to be done: Execute SQL : Select EPRD_status from EPRD_Details where trxn_no = %trxn_no",
+    "chunk_id": "KEDB_Analysis_0"
+  },
+  {
+    "doc": "KEDB_Analysis.txt",
+    "chunk": "Issue:Client raising complain that PRS not received by them for a transaction < trxn no >\nAnalysis to be done: Execute SQL : Select EPRD_status from EPRD_Details where trxn_no = %trxn_no",
+    "chunk_id": "KEDB_Analysis_1"
+  },
+  {
+    "doc": "KEDB_Analysis.txt",
+    "chunk": "Issue:Client raising complaint that proper route was not followed for a specific transaction < trxn no >\nAnalysis to be done:\nStep 1:\nFor the < trxn_no > , fetch the base_ccy_amount , client_id and the route_name for the trxn_no from the trxn_details table.\nSQL to be used for fetching the client_id, base_ccy_amount and the route_name for transaction:\nselect base_ccy_amount , client_id, route_name from trxn_details where trxn_no = \"<trxn_no >\"\nThis step gives the actual route followed by the trxn\nStep 2:\nFind the amount limits as follows by executing below SQL:\nselect Route_ID from Client_route where client_id = \"<client_id >\" and route_name = \"<route_name>\" and min_amount < \u201cbase_ccy_amount\u201d and max_amount > \"base_ccy_amount\u201c",
+    "chunk_id": "KEDB_Analysis_2"
+  },
+  {
+    "doc": "KEDB_Analysis.txt",
+    "chunk": "Issue:Client wants to know why incorrect route was followed for a specific transaction < trxn no >\nAnalysis to be done:\nStep 1:\nFor the < trxn_no > , fetch the base_ccy_amount , client_id and the route_name for the trxn_no from the trxn_details table.\nSQL to be used for fetching the client_id, base_ccy_amount and the route_name for transaction:\nselect base_ccy_amount , client_id, route_name from trxn_details where trxn_no = \"<trxn_no >\"\nThis step gives the actual route followed by the trxn\nStep 2:\nFind the amount limits as follows by executing below SQL:\nselect Route_ID from Client_route where client_id = \"<client_id >\" and route_name = \"<route_name>\" and min_amount < \u201cbase_ccy_amount\u201d and max_amount > \"base_ccy_amount\u201c",
+    "chunk_id": "KEDB_Analysis_3"
+  },
+  {
+    "doc": "KEDB_Analysis.txt",
+    "chunk": "Issue:Client is escalating for data regarding transaction details for < Client id >\nAnalysis: SQL to be executed : select * from trxn_details where clnt_id = %client_id",
+    "chunk_id": "KEDB_Analysis_4"
+  },
+  {
+    "doc": "KEDB_Analysis.txt",
+    "chunk": "Issue:Client is escalating for data regarding trxn details for < Client id >\nAnalysis: SQL to be executed : select * from trxn_details where clnt_id = %client_id",
+    "chunk_id": "KEDB_Analysis_5"
+  },
+  {
+    "doc": "KEDB_Analysis.txt",
+    "chunk": "Issue:Client is escalating for data regarding user details for < Client id >\nAnalysis: SQL to be executed : select * from client_user_details where clnt_id = %client_id",
+    "chunk_id": "KEDB_Analysis_6"
+  },
+  {
+    "doc": "KEDB_Analysis.txt",
+    "chunk": "Issue:Client is escalating for data regarding transaction details for < Client_id >\nAnalysis: SQL to be executed : select * from trxn_details where clnt_id = %client_id",
+    "chunk_id": "KEDB_Analysis_7"
+  },
+  {
+    "doc": "KEDB_Analysis.txt",
+    "chunk": "Issue:Client is escalating for data regarding trxn details for < Clnt_id >\nAnalysis: SQL to be executed : select * from trxn_details where clnt_id = %client_id",
+    "chunk_id": "KEDB_Analysis_8"
+  },
+  {
+    "doc": "KEDB_Analysis.txt",
+    "chunk": "Issue:Client is escalating for trxn details data for < Clnt_id >\nAnalysis: SQL to be executed : select * from trxn_details where clnt_id = %client_id",
+    "chunk_id": "KEDB_Analysis_9"
+  },
+  {
+    "doc": "KEDB_Analysis.txt",
+    "chunk": "Issue:Client is escalating for data regarding user details for < Client_id >\nAnalysis: SQL to be executed : select * from client_user_details where clnt_id = %client_id",
+    "chunk_id": "KEDB_Analysis_10"
+  },
+  {
+    "doc": "KEDB_Analysis.txt",
+    "chunk": "Issue:Client is requesting for user details data for < Client_id >\nAnalysis: SQL to be executed : select * from client_user_details where clnt_id = %client_id",
+    "chunk_id": "KEDB_Analysis_11"
+  }
+]

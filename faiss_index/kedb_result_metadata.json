@@ -1,0 +1,32 @@
+[
+  {
+    "doc": "KEDB_Result.txt",
+    "chunk": "Issue:PRS was not sent to customer for a transaction < trxn no >\nOutcome - If EPRD_status is \u2018PENDING\u2019, then inform EPRD not received, else if EPRD_status is \u2018SENT\u2019, then inform \u2018\u2019EPRD received\u2019",
+    "chunk_id": "KEDB_Result_0"
+  },
+  {
+    "doc": "KEDB_Result.txt",
+    "chunk": "Issue:Client raising complaint that PRS not received by them for a transaction < trxn no >\nOutcome - If EPRD_status is \u2018PENDING\u2019, then inform EPRD not received, else if EPRD_status is \u2018SENT\u2019, inform \u2018EPRD received\u2019",
+    "chunk_id": "KEDB_Result_1"
+  },
+  {
+    "doc": "KEDB_Result.txt",
+    "chunk": "Issue:Client raising complaint that proper route was not followed for a specific transaction < trxn no >\nOutcome: If 1 rows returned from SQL execution then Correct Route was followed ,  then inform with Response \"Route Name is correct\".\nIf no rows retuned from SQL execution then incorrect Route was followed ,  then inform with Response \"Route Name is Incorrect\".",
+    "chunk_id": "KEDB_Result_2"
+  },
+  {
+    "doc": "KEDB_Result.txt",
+    "chunk": "Issue:Client wants to know why incorrect route was followed for a specific transaction < trxn no >\nAnalysis:\nIf 1 rows returned from SQL execution then Correct Route was followed ,  then inform with Response \"Route Name is correct\".\nIf no rows retuned from SQL execution then incorrect Route was followed ,  then inform with Response \"Route Name is Incorrect\".",
+    "chunk_id": "KEDB_Result_3"
+  },
+  {
+    "doc": "KEDB_Result.txt",
+    "chunk": "Issue:Client is escalating for data regarding transaction details\nOutcome: Data shared reg trxn details",
+    "chunk_id": "KEDB_Result_4"
+  },
+  {
+    "doc": "KEDB_Result.txt",
+    "chunk": "Issue:Client is escalating for data regarding user details\nOutcome: Data shared reg user details",
+    "chunk_id": "KEDB_Result_5"
+  }
+]
