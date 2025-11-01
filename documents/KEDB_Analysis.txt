@@ -1,0 +1,59 @@
+Issue: PRS was not sent to customer for a transaction < trxn no >
+Analysis to be done: Execute SQL : Select EPRD_status from EPRD_Details where trxn_no = %trxn_no
+
+
+Issue: Client raising complain that PRS not received by them for a transaction < trxn no >
+Analysis to be done: Execute SQL : Select EPRD_status from EPRD_Details where trxn_no = %trxn_no
+
+Issue: Client raising complaint that proper route was not followed for a specific transaction < trxn no >
+Analysis to be done: 
+Step 1:
+For the < trxn_no > , fetch the base_ccy_amount , client_id and the route_name for the trxn_no from the trxn_details table. 
+SQL to be used for fetching the client_id, base_ccy_amount and the route_name for transaction:
+select base_ccy_amount , client_id, route_name from trxn_details where trxn_no = "<trxn_no >"
+This step gives the actual route followed by the trxn
+Step 2:
+Find the amount limits as follows by executing below SQL:
+select Route_ID from Client_route where client_id = "<client_id >" and route_name = "<route_name>" and min_amount < “base_ccy_amount” and max_amount > "base_ccy_amount“
+
+
+Issue: Client wants to know why incorrect route was followed for a specific transaction < trxn no >
+Analysis to be done: 
+Step 1:
+For the < trxn_no > , fetch the base_ccy_amount , client_id and the route_name for the trxn_no from the trxn_details table. 
+SQL to be used for fetching the client_id, base_ccy_amount and the route_name for transaction:
+select base_ccy_amount , client_id, route_name from trxn_details where trxn_no = "<trxn_no >"
+This step gives the actual route followed by the trxn
+Step 2:
+Find the amount limits as follows by executing below SQL:
+select Route_ID from Client_route where client_id = "<client_id >" and route_name = "<route_name>" and min_amount < “base_ccy_amount” and max_amount > "base_ccy_amount“
+
+
+Issue: Client is escalating for data regarding transaction details for < Client id >
+Analysis: SQL to be executed : select * from trxn_details where clnt_id = %client_id
+
+
+Issue: Client is escalating for data regarding trxn details for < Client id >
+Analysis: SQL to be executed : select * from trxn_details where clnt_id = %client_id
+
+
+Issue: Client is escalating for data regarding user details for < Client id >
+Analysis: SQL to be executed : select * from client_user_details where clnt_id = %client_id
+
+Issue: Client is escalating for data regarding transaction details for < Client_id >
+Analysis: SQL to be executed : select * from trxn_details where clnt_id = %client_id
+
+
+Issue: Client is escalating for data regarding trxn details for < Clnt_id >
+Analysis: SQL to be executed : select * from trxn_details where clnt_id = %client_id
+
+Issue: Client is escalating for trxn details data for < Clnt_id >
+Analysis: SQL to be executed : select * from trxn_details where clnt_id = %client_id
+
+
+Issue: Client is escalating for data regarding user details for < Client_id >
+Analysis: SQL to be executed : select * from client_user_details where clnt_id = %client_id
+
+
+Issue: Client is requesting for user details data for < Client_id >
+Analysis: SQL to be executed : select * from client_user_details where clnt_id = %client_id

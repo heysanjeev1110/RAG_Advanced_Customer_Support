@@ -1,0 +1,24 @@
+Issue: PRS was not sent to customer for a transaction < trxn no >
+Outcome - If EPRD_status is ‘PENDING’, then inform EPRD not received, else if EPRD_status is ‘SENT’, then inform ‘’EPRD received’
+
+Issue: Client raising complaint that PRS not received by them for a transaction < trxn no >
+Outcome - If EPRD_status is ‘PENDING’, then inform EPRD not received, else if EPRD_status is ‘SENT’, inform ‘EPRD received’
+
+
+Issue: Client raising complaint that proper route was not followed for a specific transaction < trxn no >
+Outcome: If 1 rows returned from SQL execution then Correct Route was followed ,  then inform with Response "Route Name is correct".
+If no rows retuned from SQL execution then incorrect Route was followed ,  then inform with Response "Route Name is Incorrect".
+
+
+Issue: Client wants to know why incorrect route was followed for a specific transaction < trxn no >
+Analysis:
+If 1 rows returned from SQL execution then Correct Route was followed ,  then inform with Response "Route Name is correct".
+If no rows retuned from SQL execution then incorrect Route was followed ,  then inform with Response "Route Name is Incorrect".
+
+
+Issue: Client is escalating for data regarding transaction details
+Outcome: Data shared reg trxn details
+
+
+Issue: Client is escalating for data regarding user details
+Outcome: Data shared reg user details

@@ -1,0 +1,25 @@
+Issue: PRS was not sent to customer for a transaction < trxn no >
+Cause: EPRDis not received for the < trxn no >
+
+Issue: Client raising complain that PRS not received by them for a transaction < trxn no >
+Cause: EPRD is not received for the < trxn no >
+
+
+Issue: Client raising complaint that proper route was not followed for a specific transaction < trxn_no >
+Cause: There could be a route mismatch between the required flow for the transaction and the actual route followed by the transaction.
+
+
+Issue: Client wants to know why incorrect route was followed for a specific transaction < trxn no >
+Cause: There could be a route mismatch between the required flow for the transaction and the actual route followed by the transaction.
+
+Issue: Client is escalating for data regarding trxn details for < Clnt_id >
+Cause: SQL to be executed : select * from trxn_details where clnt_id = %client_id
+
+Issue: Client is escalating for data regarding transaction details
+Cause: Client needs data
+
+Issue: Client is escalating for data regarding user details
+Cause: Client needs data reg their users
+
+Issue: Client is requesting for user details data for < Client_id >
+Cause: SQL to be executed : select * from client_user_details where clnt_id = %client_id
