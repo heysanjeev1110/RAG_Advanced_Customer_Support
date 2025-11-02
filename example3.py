@@ -144,6 +144,9 @@ def _parse_kedb_files() -> dict:
             if re.match(r"\s*(SELECT|WITH|UPDATE|INSERT|DELETE)\b", line, re.IGNORECASE):
                 sqls.append(line.strip())
         
+        # Remove duplicates
+        sqls = sorted(list(set(sqls)), key=body.find)
+
         # Normalize SQL parameters: convert %param to %(param)s format for psycopg2
         # Also handle parameter name variations and column name fixes
         normalized_sqls = []
@@ -447,7 +450,6 @@ def kedb_run_analysis(issue: str, params_json: Optional[Union[Dict[str, Any], st
                 # Normalize SQL for psycopg2
                 sql_normalized = _normalize_sql_for_psycopg2(sql)
                 sqls.append(sql_normalized)
-                break  # Take first SQL found
     
     analysis_texts = [analysis_text]
     
@@ -512,6 +514,15 @@ def kedb_run_analysis(issue: str, params_json: Optional[Union[Dict[str, Any], st
                     except Exception:
                         rows = []
                     rows_per_sql.append(rows)
+
+                    # Chain parameters for next SQL
+                    if i == 1 and rows:  # After 2nd SQL
+                        try:
+                            # Assuming client_id is the 2nd column
+                            params["client_id"] = rows[0][1]
+                        except Exception as e:
+                             mcp_log("ERROR", f"Failed to get client_id: {e}")
+
                 except Exception as e:
                     rows_per_sql.append([])
                     mcp_log("ERROR", f"SQL failed for issue '{issue}', SQL: {sql}, Params: {params}, Error: {e}")

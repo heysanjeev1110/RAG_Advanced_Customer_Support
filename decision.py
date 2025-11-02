@@ -90,14 +90,15 @@ Input Summary:
   - it adds the first result and adds to memory
   - FINAL_ANSWER: return the output from all the 3 vector embedding and show to user
 
-- User asks: "Client raising complain that PRS not received by them for a transaction = 12345"
-  - FUNCTION_CALL: search_documents|query="Client raising complain that PRS not received by them for a transaction"|trxn_no=12345
+- User asks: "PRS was not sent to customer for a transaction 12345"
+  - FUNCTION_CALL: search_documents|query="PRS was not sent to customer for a transaction"|trxn_no=12345
   - It retrieves relevant vector embeding for KEDB.txt and KEDB_Analysis.txt and KEDB_Result.txt in same order
-  - from the vector embedding for KEDB.txt , it gets the cause with the best matching with the user query- it stores in memory 
-  - now it goes to the vector embedding for KEDB_Analysis.txt and gets the SQL for the best matching chunk and adds the parameter trxn_no passed in user query which is 12345 - it stores in memory
-  - it executes the SQL against Postgres database and gets the result - and adds in memory
-  - now it goes to the vector embedding for KEDB_Result.txt and gets the outcome for the user query 
-  - If EPRD_status is ‘PENDING’, then inform 'EPRD not received', else if EPRD_status is ‘SENT’, inform ‘EPRD received’
+  - from the vector embedding for KEDB.txt , it gets the cause with the best matching with the user query- it stores in memory
+  - now it goes to the vector embedding for KEDB_Analysis.txt and gets the SQLs for the best matching chunk and adds the parameter trxn_no passed in user query which is 12345 - it stores in memory
+  - it executes the first SQL against Postgres database and gets the result - and adds in memory
+  - it executes the second SQL against Postgres database and gets the result and also the client_id - and adds in memory
+  - it executes the third SQL against Postgres database with the client_id from the previous step and gets the result - and adds in memory
+  - now it goes to the vector embedding for KEDB_Result.txt and gets the outcome for the user query
   - it adds the first result and adds to memory
   - FINAL_ANSWER: return the output from all the 3 vector embedding which is stored in memory and show to user
 
