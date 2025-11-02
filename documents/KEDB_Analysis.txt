@@ -1,5 +1,7 @@
 Issue: PRS was not sent to customer for a transaction < trxn no >
-Analysis to be done: Execute SQL : Select EPRD_status from EPRD_Details where trxn_no = %trxn_no
+Analysis to be done: Execute SQL : 
+1) Select EPRD_status as EPRD_current_status from EPRD_Details where trxn_no = %trxn_no;
+2) Select status as trxn_status from trxn_details where trxn_no = %trxn_no
 
 
 Issue: Client raising complain that PRS not received by them for a transaction < trxn no >
